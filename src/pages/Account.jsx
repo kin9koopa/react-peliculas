@@ -1,5 +1,6 @@
 import React from 'react';
 import SavedContent from '../components/SavedContent';
+import SavedReview from '../components/SavedReview';
 
 const AccountPage = () => {
 	return (
@@ -18,6 +19,7 @@ const AccountPage = () => {
 					</div>
 				</div>
 				<SavedContent />
+				<SavedReview />
 			</div>
 		</>
 	);

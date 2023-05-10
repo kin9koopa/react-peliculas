@@ -52,29 +52,36 @@ const SavedContent = () => {
 					className="w-full left-0 h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
 				>
 					{movies.map((item, id) => (
-						<div
-							key={id}
-							className="w-[160px] sm:2-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2"
-						>
-							<img
-								className="w-full h-auto block max-h-[146px]"
-								src={`https://image.tmdb.org/t/p/w500/${
-									item?.backdrop_path ? item?.backdrop_path : item?.poster_path
-								}`}
-								alt={item?.title}
-							/>
-							<div className="absolute top-0 left-0 w-full h-full hover:bg-black/60 opacity-0 hover:opacity-100 text-white">
-								<p className="whitespace-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
-									{item?.title ? item?.title : item?.name}
-								</p>
-								<p
-									onClick={() => deleteFavorite(item.id)}
-									className="absolute text-gray-300 top-4 right-4"
-								>
-									<AiOutlineClose />
-								</p>
+						<>
+							<div
+								key={id}
+								className="w-[160px] sm:2-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2"
+							>
+								<img
+									className="w-full h-auto block max-h-[146px]"
+									src={`https://image.tmdb.org/t/p/w500/${
+										item?.backdrop_path
+											? item?.backdrop_path
+											: item?.poster_path
+									}`}
+									alt={item?.title}
+								/>
+								<div className="absolute top-0 left-0 w-full h-full hover:bg-black/60 opacity-0 hover:opacity-100 text-white">
+									<p className="whitespace-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
+										{item?.title ? item?.title : item?.name}
+									</p>
+									<p
+										onClick={() => deleteFavorite(item.id)}
+										className="absolute text-gray-300 top-4 right-4"
+									>
+										<AiOutlineClose />
+									</p>
+								</div>
+								<div className="flex justify-center items-center h-full">
+									<h1>Reviews!</h1>
+								</div>
 							</div>
-						</div>
+						</>
 					))}
 				</div>
 				<MdChevronRight

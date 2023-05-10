@@ -45,7 +45,7 @@ const Main = () => {
 						Released: {movie?.release_date}
 					</p>
 					<p className="w-full md:max-[70%] lg:max-[50%] xl:max-[35%] 2xl:max-[30%] text-gray-200">
-						{movie?.overview}
+						{truncateDescription(movie?.overview, 250)}
 					</p>
 				</div>
 			</div>

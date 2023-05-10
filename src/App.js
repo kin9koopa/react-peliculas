@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthContextProvider } from './context/AuthContext';
 import AccountPage from './pages/Account';
-import Detail from './pages/Detail';
+import Details from './pages/Details';
 import Home from './pages/Home';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/SignUp';
@@ -25,7 +25,7 @@ function App() {
 							</ProtectedRoute>
 						}
 					/>
-					<Route path="/movie-detail" element={<Detail />} />
+					<Route path="/details/:id" element={<Details />} />
 					<Route path="*" element={<h1>404</h1>} />
 				</Routes>
 			</AuthContextProvider>

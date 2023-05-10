@@ -1,14 +1,15 @@
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import React, { useState } from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import { MdReviews } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import '../index.css';
-import Modal from './Modal';
 
 const Movie = ({ item }) => {
 	const [like, setLike] = useState(false);
+	// eslint-disable-next-line no-unused-vars
 	const [favorite, setFavorite] = useState(false);
 	const { user } = useAuth();
 
@@ -49,6 +50,11 @@ const Movie = ({ item }) => {
 						<FaRegHeart className="absolute top-4 left-4 text-gray-300" />
 					)}
 				</p>
+				<Link to={'/details/' + item?.id}>
+					<p className="absolute top-4 right-4 text-gray-300">
+						<AiOutlinePlus />
+					</p>
+				</Link>
 			</div>
 		</div>
 	);
